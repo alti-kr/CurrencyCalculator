@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_xlarge">
+
+    <RelativeLayout
+        android:id="@+id/rlCurrencyFromContainer"
+        style="@style/InputTextContainer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginEnd="@dimen/margin_small_xxx"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_12"
+            android:layout_toStartOf="@+id/imageViewDropdownFrom"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_from_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewFlagFrom"
+                    android:layout_width="@dimen/common_icon_size"
+                    android:layout_height="@dimen/common_icon_size" />
+
+                <TextView
+                    android:id="@+id/tvNameFrom"
+                    style="@style/TextView.Default.Normal.Black.16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDropdownFrom"
+            android:layout_width="@dimen/size_14"
+            android:layout_height="@dimen/size_14"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/size_10"
+            app:srcCompat="@drawable/ic_dropdown" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlCurrencyToContainer"
+        style="@style/InputTextContainer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginEnd="@dimen/margin_small_xxx"
+        app:layout_constraintTop_toBottomOf="@+id/rlCurrencyFromContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_12"
+            android:layout_toStartOf="@+id/imageViewDropdownTo"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_from_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewFlagTo"
+                    android:layout_width="@dimen/common_icon_size"
+                    android:layout_height="@dimen/common_icon_size" />
+
+                <TextView
+                    android:id="@+id/tvNameTo"
+                    style="@style/TextView.Default.Normal.Black.16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDropdownTo"
+            android:layout_width="@dimen/size_14"
+            android:layout_height="@dimen/size_14"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/size_10"
+            app:srcCompat="@drawable/ic_dropdown" />
+    </RelativeLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCalculate"
+        style="@style/ButtonStyle.Unelevated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

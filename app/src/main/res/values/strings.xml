@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Currency Calculator</string>
+    <string name="button_calculate">Calculate</string>
+    <string name="currency_from_title">Currency from:</string>
+    <string name="currency_to_title">Currency to:</string>
+    <string name="countryPickerTitle">Select country</string>
+    <string name="search">Search</string>
+</resources>

@@ -21,12 +21,12 @@ android {
         debug {
             versionNameSuffix "-debug"
             //  signingConfig signingConfigs.debug
-            buildConfigField "String", "BASE_URL", "\"https://***.org\""
+            buildConfigField "String", "BASE_URL", '"https://bank.gov.ua/"'
         }
         release {
             versionNameSuffix ""
             //    signingConfig signingConfigs.release
-            buildConfigField "String", "BASE_URL", "\"https://***.org\""
+            buildConfigField "String", "BASE_URL", '"https://bank.gov.ua/"'
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
