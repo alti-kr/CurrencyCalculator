@@ -1,0 +1,97 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion buildConfig.compileSdkVersion
+
+    defaultConfig {
+        applicationId buildConfig.applicationId
+        minSdkVersion buildConfig.minSdkVersion
+        targetSdkVersion buildConfig.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            versionNameSuffix "-debug"
+            //  signingConfig signingConfigs.debug
+            buildConfigField "String", "BASE_URL", "\"https://***.org\""
+        }
+        release {
+            versionNameSuffix ""
+            //    signingConfig signingConfigs.release
+            buildConfigField "String", "BASE_URL", "\"https://***.org\""
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//  Androidx
+    implementation "androidx.core:core-ktx:$versions.androidx.core"
+    implementation "androidx.appcompat:appcompat:$versions.androidx.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.androidx.constraintlayout"
+    implementation "androidx.paging:paging-runtime-ktx:$versions.androidx.paging"
+    implementation "androidx.browser:browser:$versions.androidx.browser"
+    //  Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.androidx.lifecycle.base"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$versions.androidx.lifecycle.base"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$versions.androidx.lifecycle.viewmodelCompose"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.androidx.lifecycle.base"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$versions.androidx.lifecycle.base"
+    kapt "androidx.lifecycle:lifecycle-compiler:$versions.androidx.lifecycle.base"
+
+    //  Material
+    implementation "com.google.android.material:material:$versions.material"
+
+    //  Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines"
+
+    //  Navigation
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$versions.navigation"
+
+    //  Koin
+    implementation "io.insert-koin:koin-android:$versions.koin"
+    implementation "io.insert-koin:koin-android-ext:$versions.koin_ext"
+    implementation "io.insert-koin:koin-androidx-workmanager:$versions.koin"
+    implementation "io.insert-koin:koin-androidx-compose:$versions.koin_compose"
+
+    // MAP
+    implementation "com.google.android.gms:play-services-maps:$versions.google_map"
+
+//  Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+    implementation "androidx.work:work-runtime-ktx:$versions.work_version"
+
+    //  OkHttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okHttp"
+
+//  Test
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
