@@ -38,7 +38,6 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewCode"
-        android:visibility="invisible"
         style="@style/TextView.Default.Normal.Black.16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
