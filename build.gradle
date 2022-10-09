@@ -8,11 +8,11 @@ buildscript {
                 targetSdkVersion : 31,
                 //  Flavors
 
-                baseMVIVersion   : [
+                appVersion   : [
                         code: 1,
-                        name: "0.0.1"
+                        name: "1.0"
                 ],
-                'applicationId'  : "com.base.mvi"
+                'applicationId'  : "com.sergii_tymofieiev.currency_calculator"
         ]
         versions = [
                 'gradle'      : '7.0.4',
