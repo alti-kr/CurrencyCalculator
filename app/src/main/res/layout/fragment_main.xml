@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_large_x">
+    <RelativeLayout
+        android:id="@+id/rlDateContainer"
+        style="@style/InputTextContainer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginEnd="@dimen/margin_small_xxx"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_12"
+            android:layout_toStartOf="@+id/imageViewDropdownDate"
+            android:orientation="vertical">
+            <TextView
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date_title" />
+                <TextView
+                    android:id="@+id/tvDate"
+                    style="@style/TextView.Default.Normal.Black.16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDropdownDate"
+            android:layout_width="@dimen/size_14"
+            android:layout_height="@dimen/size_14"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/size_10"
+            app:srcCompat="@drawable/ic_dropdown" />
+    </RelativeLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePhone"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_64"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+
+        app:layout_constraintTop_toBottomOf="@+id/rlDateContainer" />
+
+    <RelativeLayout
+        android:id="@+id/rlCurrencyFromContainer"
+        style="@style/InputTextContainer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginEnd="@dimen/margin_small_xxx"
+        app:layout_constraintTop_toBottomOf="@+id/rlDateContainer"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePhone"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_12"
+            android:layout_toStartOf="@+id/imageViewDropdownFrom"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_from_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewFlagFrom"
+                    android:layout_width="@dimen/common_icon_size"
+                    android:layout_height="@dimen/common_icon_size" />
+
+                <TextView
+                    android:id="@+id/tvNameFrom"
+                    style="@style/TextView.Default.Normal.Black.16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDropdownFrom"
+            android:layout_width="@dimen/size_14"
+            android:layout_height="@dimen/size_14"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/size_10"
+            app:srcCompat="@drawable/ic_dropdown" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlInputContainer"
+        style="@style/InputTextContainer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_marginStart="@dimen/margin_small_xxx"
+
+        app:layout_constraintBottom_toBottomOf="@+id/rlCurrencyFromContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelinePhone"
+
+        app:layout_constraintTop_toTopOf="@+id/rlCurrencyFromContainer">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_12"
+
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_from_title" />
+
+            <EditText
+                android:id="@+id/etAmount"
+                style="@style/EditTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/amount_from_hint"
+                android:inputType="numberDecimal"
+                android:background="@null">
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlCurrencyToContainer"
+        style="@style/InputTextContainer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30"
+        android:layout_marginEnd="@dimen/margin_small_xxx"
+        app:layout_constraintTop_toBottomOf="@+id/rlCurrencyFromContainer"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePhone"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_12"
+            android:layout_toStartOf="@+id/imageViewDropdownTo"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_to_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageViewFlagTo"
+                    android:layout_width="@dimen/common_icon_size"
+                    android:layout_height="@dimen/common_icon_size" />
+
+                <TextView
+                    android:id="@+id/tvNameTo"
+                    style="@style/TextView.Default.Normal.Black.16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_4" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDropdownTo"
+            android:layout_width="@dimen/size_14"
+            android:layout_height="@dimen/size_14"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/size_10"
+            app:srcCompat="@drawable/ic_dropdown" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlResultContainer"
+        style="@style/InputTextContainer"
+        android:layout_width="@dimen/size_0"
+        android:layout_height="@dimen/size_0"
+        android:layout_marginStart="@dimen/margin_small_xxx"
+
+        app:layout_constraintBottom_toBottomOf="@+id/rlCurrencyToContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guidelinePhone"
+
+        app:layout_constraintTop_toTopOf="@+id/rlCurrencyToContainer">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_12"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/amount_to_title" />
+
+            <TextView
+                android:id="@+id/tvAmount"
+                style="@style/TextView.Default.Normal.Black.16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tvHistoryTitle"
+        android:layout_marginTop="@dimen/margin_large_x"
+        app:layout_constraintTop_toBottomOf="@+id/rlCurrencyToContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/TextView.Default.Normal.Black.16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/history_title" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_marginTop="@dimen/margin_large_x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHistoryTitle"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_0">
+        <TextView
+            android:id="@+id/tvHistory"
+            style="@style/TextView.Default.Normal.Black.16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCalculate"
+        style="@style/ButtonStyle.Unelevated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonStyle.Unelevated" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textSize">@dimen/font_middle</item>
+        <item name="android:textColor">@drawable/button_text_color_selector</item>
+        <item name="android:paddingStart">@dimen/padding_default</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingEnd">@dimen/padding_default</item>
+        <item name="android:paddingTop">@dimen/padding_normal</item>
+        <item name="android:paddingBottom">@dimen/padding_normal</item>
+    </style>
+</resources>

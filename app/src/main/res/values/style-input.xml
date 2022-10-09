@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/white</item>
+    </style>
+    <style name="InputTextContainer">
+        <item name="android:background">@drawable/bg_black_stroke</item>
+        <item name="minHeight">@dimen/size_64</item>
+    </style>
+</resources>
