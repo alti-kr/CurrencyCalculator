@@ -13,8 +13,9 @@ android {
         applicationId buildConfig.applicationId
         minSdkVersion buildConfig.minSdkVersion
         targetSdkVersion buildConfig.targetSdkVersion
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        versionCode buildConfig.appVersion.code
+        versionName buildConfig.appVersion.name
     }
 
     buildTypes {
@@ -27,8 +28,8 @@ android {
             versionNameSuffix ""
             //    signingConfig signingConfigs.release
             buildConfigField "String", "BASE_URL", '"https://bank.gov.ua/"'
-            minifyEnabled true
-            shrinkResources true
+//            minifyEnabled true
+//            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
