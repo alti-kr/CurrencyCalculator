@@ -123,20 +123,15 @@ class MainFragment : BaseVBindingFragment<FragmentMainBinding>() {
         fillAmount(0)
     }
 
-
-    private fun toggleButtonCalculate(onOff: Boolean) {
-        binding.btnCalculate.isEnabled = onOff
-    }
-
-    var cp: CountryPickerBottomSheet? = null
+    private var cp: CountryPickerBottomSheet? = null
     private fun setupCountryPickerBottomSheet() {
         if (cp == null) {
             cp = CountryPickerBottomSheet.newInstance(
                 CountryPickerArguments(
                     R.layout.item_country_picker,
                     true,
-                    emptyList(),//excludedCountries,
-                    emptyList(),//admittedCountries
+                    emptyList(),
+                    emptyList(),
                     headerList
                 )
             )

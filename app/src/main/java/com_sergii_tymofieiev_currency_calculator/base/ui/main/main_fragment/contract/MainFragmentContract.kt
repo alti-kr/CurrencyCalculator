@@ -1,10 +1,7 @@
 package com_sergii_tymofieiev_currency_calculator.base.ui.main.main_fragment.contract
-
-import com.google.android.gms.maps.model.LatLng
 import com_sergii_tymofieiev_currency_calculator.base.mvi.effect.UiEffect
 import com_sergii_tymofieiev_currency_calculator.base.mvi.event.UiEvent
 import com_sergii_tymofieiev_currency_calculator.base.mvi.state.UiState
-import com_sergii_tymofieiev_currency_calculator.base.ui.data.PlaceData
 import com_sergii_tymofieiev_currency_calculator.base.ui.main.main_fragment.data.CurrencyListItemModel
 
 /**

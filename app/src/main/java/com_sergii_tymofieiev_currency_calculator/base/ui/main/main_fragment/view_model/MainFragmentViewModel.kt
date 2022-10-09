@@ -12,11 +12,11 @@ import com_sergii_tymofieiev_currency_calculator.base.ui.main.main_fragment.cont
 import com_sergii_tymofieiev_currency_calculator.base.ui.main.main_fragment.data.CurrencyListItemModel
 import com_sergii_tymofieiev_currency_calculator.base.util.text_watcher.parseStringAmountToInt
 import kotlinx.coroutines.launch
-import java.lang.Math.min
 import java.lang.StringBuilder
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.math.min
 
 /**
  * Created by Sergii Tymofieiev on 20.03.2022
@@ -45,7 +45,7 @@ class MainFragmentViewModel(
     }
 
     private fun calculateAmount(event: MainFragmentEvent.CalculateAmount) {
-        if(!uiState.value.rateList.isEmpty() && uiState.value.dateOfRate == event.date ){
+        if(uiState.value.rateList.isNotEmpty() && uiState.value.dateOfRate == event.date ){
             calculate(uiState.value.rateList, event)
         }else {
             viewModelScope.launch {
